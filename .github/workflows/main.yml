@@ -14,7 +14,7 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v1
       - name: Install dependencies
         run: |
-          Rscript -e 'install.packages(c("readr", "knitr", "leaflet", "flexdashboard", "rmarkdown"), dependencies = TRUE)'
+          Rscript -e 'install.packages(c("readr", "leaflet", "flexdashboard", "rmarkdown"))'
       - name: Run R script
         run: |
           Rscript -e "rmarkdown::render("./index.Rmd", "flex_dashboard")"
