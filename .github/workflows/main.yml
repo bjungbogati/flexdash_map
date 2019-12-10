@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: actions/cache@v1.0.3
       - uses: r-lib/actions/setup-r@master
+      - uses: r-lib/actions/setup-pandoc@v1
       - name: Install dependencies
         run: |
           Rscript -e 'install.packages(c("readr", "knitr", "leaflet", "flexdashboard", "rmarkdown"), dependencies = TRUE)'
