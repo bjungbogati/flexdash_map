@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+name: flexdash
+
+jobs:
+  flexdash:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: r-lib/actions/setup-r@master
+      - name: Install dependencies
+        run: |
+          Rscript -e 'install.packages(c("readr", "knitr", "leaflet", "flexdashboard", "rmarkdown"), dependencies = TRUE)'
+      - name: Install package
+        run: R CMD INSTALL .
+      - name: Run R script
+        run: |
+          Rscript -e "render("index.Rmd", "flex_dashboard")"
