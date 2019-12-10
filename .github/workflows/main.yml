@@ -18,6 +18,13 @@ jobs:
       - name: Run R script
         run: |
           Rscript -e "rmarkdown::render('index.Rmd')"
+      - name: commit
+        run: |
+          git add .
+          git commit -m 'update index file'
+      - uses: r-lib/actions/pr-push@master
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
 
 
