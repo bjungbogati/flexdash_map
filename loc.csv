@@ -1,2 +1,3 @@
-name, place, lng, lat
-Binod, Kathmandu, 85.2855876, 27.7201415
+name, place, lat, lng
+Binod, Kathmandu, 27.7201415, 85.2855876
+Ram, Bhaktapur, 27.6734997, 85.3841413

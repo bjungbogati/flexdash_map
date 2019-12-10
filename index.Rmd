@@ -1,0 +1,34 @@
+---
+title: "Pin Your Location"
+output: 
+  flexdashboard::flex_dashboard
+---
+
+```{r setup, include=FALSE, message=TRUE, warning=FALSE}
+library(flexdashboard)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### 
+
+```{r}
+library(leaflet)
+
+loc <- readr::read_csv("loc.csv")
+
+leaflet() %>%
+addTiles() %>%
+addMarkers(loc$lng, loc$lat, popup=loc$name)
+
+```
+
+Column {data-width=250}
+-----------------------------------------------------------------------
+
+###
+    
+```{r}
+knitr::kable(loc[1:2])
+``` 

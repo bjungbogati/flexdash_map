@@ -1,0 +1,9 @@
+{
+    "path" : "~/R/dashboard/git_map",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
