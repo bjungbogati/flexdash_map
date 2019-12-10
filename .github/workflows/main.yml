@@ -9,7 +9,6 @@ jobs:
   flexdash:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/cache@v1.0.3
       - uses: actions/checkout@master
       - uses: r-lib/actions/setup-r@master
       - name: Install dependencies
@@ -17,4 +16,4 @@ jobs:
           Rscript -e 'install.packages(c("readr", "knitr", "leaflet", "flexdashboard", "rmarkdown"), dependencies = TRUE)'
       - name: Run R script
         run: |
-          Rscript -e "render("index.Rmd", "flex_dashboard")"
+          Rscript -e "render("./index.Rmd", "flex_dashboard")"
