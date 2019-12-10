@@ -1,2 +1,3 @@
-.Rproj.user
-git_map.Rproj
+*.Rproj.user
+
+*.Rproj
