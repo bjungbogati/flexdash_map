@@ -34,7 +34,7 @@ jobs:
         run: |
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git config user.name "{{ github.actor }}"
-          git rebase -i origin/HEAD:${{ github.ref }} 
+          git rebase -i --root 
           git add .
           git commit -m 'Re-build README.Rmd' || echo "No changes to commit"
           git push https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git HEAD:${{ github.ref }} || echo "No changes to commit"
