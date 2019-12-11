@@ -20,10 +20,9 @@ jobs:
       - name: Run R script
         run: |
           Rscript -e "rmarkdown::render('index.Rmd')"
-      - name: secret
+      - name: commit
         env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: commit
         run: |
           git config user.email "m1s1ng@outlook.com"
           git config user.name "bjungbogati"
