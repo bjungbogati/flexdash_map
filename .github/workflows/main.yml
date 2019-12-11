@@ -13,11 +13,6 @@ jobs:
       - uses: r-lib/actions/setup-r@master
 
       - uses: r-lib/actions/setup-pandoc@v1
-      - name: Cache R packages
-        uses: actions/cache@v1
-        with:
-          path: /home/runner/work/_temp/Library
-          key: ${{ runner.os }}-r-3.6-${{ hashFiles('DESCRIPTION') }} 
 
       - name: Install dependencies
         run: |
