@@ -9,9 +9,10 @@ jobs:
   flexdash:
     runs-on: ubuntu-16.04
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2-beta
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - uses: r-lib/actions/setup-r@master
-
       - uses: r-lib/actions/setup-pandoc@v1
 
       - name: Install dependencies
@@ -30,5 +31,4 @@ jobs:
           git add .
           git commit -m 'Re-build index.Rmd' || echo "No changes to commit"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository}}.git
-          
-          git push 
+          git push origin master
