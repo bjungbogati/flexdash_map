@@ -25,5 +25,8 @@ jobs:
           Rscript -e "rmarkdown::render('index.Rmd')"
       - name: commit
         run: |
-          git commit index.Rmd -m 'Re-build index.Rmd' || echo "No changes to commit"
+          git config user.email "m1s1ng@outlook.com"
+          git config user.name "bjungbogati"
+          git add .
+          git commit -m 'Re-build index.Rmd' || echo "No changes to commit"
           git push https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git HEAD:${{ github.ref }} || echo "No changes to commit"
