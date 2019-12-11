@@ -30,7 +30,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ${{ env.R_LIBS_USER }}
-          key: ${{ matrix.config.os }}-r-${{ matrix.config.r }}-${{ hashFiles('DESCRIPTION') }} 
+          key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{ hashFiles('DESCRIPTION') }} 
           
       - name: Install system dependencies
         if: runner.os == 'Linux'
