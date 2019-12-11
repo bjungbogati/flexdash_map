@@ -9,15 +9,23 @@ jobs:
   flexdash:
     runs-on: ubuntu-16.04
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2-beta
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - uses: r-lib/actions/setup-r@master
+      - uses: r-lib/actions/setup-pandoc@master
+      
+      - name: Cache R Packages
+        uses: actions/cache@v1
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key:  r-${{ hashFiles('DESCRIPTION') }}
 
-      - uses: r-lib/actions/setup-pandoc@v1
-
-      - name: Install dependencies
+      - name: Install R Packages
         run: |
-          Rscript -e 'install.packages(c("readr", "leaflet", "flexdashboard", "rmarkdown"))'
-      - name: Run R script
+          Rscript -e 'install.packages(c("readr", "leaflet", "flexdashboard", "rmarkdown", dependencies = T))'
+      
+      - name: Render Rmarkdown
         run: |
           Rscript -e "rmarkdown::render('index.Rmd')"
       - name: commit
@@ -26,9 +34,7 @@ jobs:
         run: |
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git config user.name "{{ github.actor }}"
-          git checkout master
+          git rebase -i origin/HEAD:${{ github.ref }} 
           git add .
-          git commit -m 'Re-build index.Rmd' || echo "No changes to commit"
-          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository}}.git
-          
-          git push 
+          git commit -m 'Re-build README.Rmd' || echo "No changes to commit"
+          git push https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git HEAD:${{ github.ref }} || echo "No changes to commit"
