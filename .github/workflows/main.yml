@@ -20,6 +20,8 @@ jobs:
           Rscript -e "rmarkdown::render('index.Rmd')"
       - name: commit
         run: |
+          git config --global user.email "bjungbogati@gmail.com"
+          git config --global user.name "bjungbogati"
           git add .
           git commit -m 'update index file'
       - uses: r-lib/actions/pr-push@master
