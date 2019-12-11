@@ -22,7 +22,7 @@ jobs:
           Rscript -e "rmarkdown::render('index.Rmd')"
       - name: commit
         env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           git config user.email "m1s1ng@outlook.com"
           git config user.name "bjungbogati"
