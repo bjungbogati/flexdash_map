@@ -6,4 +6,5 @@ LazyData: true
 Imports: 
     flexdashboard,
     rmarkdown,
-    readr
+    readr, 
+    leaflet
