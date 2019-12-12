@@ -15,12 +15,14 @@ Column {data-width=650}
 
 ```{r}
 library(leaflet)
+library(magrittr)
 
 loc <- readr::read_csv("loc.csv")
 
-leaflet(loc) %>%
+loc %>%
+leaflet() %>%
 addTiles() %>%
-addMarkers(loc$lng, loc$lat, popup=loc$name)
+addMarkers(~lng, ~lat, popup=~name)
 
 ```
 
