@@ -1,5 +1,5 @@
 ---
-title: "Pin Your Location"
+title: "Pin Your Locations"
 output: 
   flexdashboard::flex_dashboard
 ---
