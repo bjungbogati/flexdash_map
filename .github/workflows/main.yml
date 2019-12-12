@@ -34,7 +34,6 @@ jobs:
         run: |
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git config user.name "{{ github.actor }}"
-          git checkout -b test1
           git add .
           git commit -m 'Re-build README.Rmd' || echo "No changes to commit"
-          git push -f https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git HEAD:test1 || echo "No changes to commit"
+          git push -f https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git HEAD:${GITHUB_REF} || echo "No changes to commit"
