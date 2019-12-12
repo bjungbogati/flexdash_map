@@ -20,11 +20,10 @@ library(htmlwidgets)
 
 loc <- readr::read_csv("loc.csv")
 
-loc %>%
 leaflet() %>%
-addTiles() %>%
-addMarkers(~lng, ~lat, popup=~name)
-
+addProviderTiles(providers$OpenStreetMap) %>% 
+addMarkers(data = loc, ~lng, ~lat, popup=~name)
+ 
 
 ```
 
