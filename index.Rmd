@@ -17,12 +17,13 @@ Column {data-width=650}
 library(leaflet)
 library(magrittr)
 library(htmlwidgets)
+library(readr)
 
-loc <- readr::read_csv("loc.csv")
+loc <- read_csv("loc.csv")
 
 leaflet() %>%
 addProviderTiles(providers$OpenStreetMap) %>% 
-addMarkers(data = loc, ~lng, ~lat, popup=~name)
+addMarkers(data = loc, lng = loc$lng, lat = loc$lat, popup= loc$name)
  
 
 ```
