@@ -18,7 +18,7 @@ library(leaflet)
 
 loc <- readr::read_csv("loc.csv")
 
-leaflet() %>%
+leaflet(loc) %>%
 addTiles() %>%
 addMarkers(loc$lng, loc$lat, popup=loc$name)
 
