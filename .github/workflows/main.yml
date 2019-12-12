@@ -23,7 +23,7 @@ jobs:
 
       - name: Install R Packages
         run: |
-          Rscript -e 'install.packages(c("readr", "leaflet", "flexdashboard", "rmarkdown", dependencies = T))'
+          Rscript -e 'install.packages(c("readr", "magrittr", "leaflet", "flexdashboard", "rmarkdown", dependencies = T))'
       
       - name: Render Rmarkdown
         run: |
