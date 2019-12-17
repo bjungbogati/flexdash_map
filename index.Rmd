@@ -17,28 +17,14 @@ Column {data-width=650}
 
 ```{r}
 library(leaflet)
-<<<<<<< HEAD
 library(readr)
 
 loc <- read_csv("loc.csv")
 
 leaflet(loc) %>%
-addMarkers(data = loc, lng = , lat = loc$lat, popup= loc$name) %>% 
+addMarkers(lng = loc$lng, lat = loc$lat, popup= loc$name) %>% 
 setView(lng =  mean(loc$lng),lat = mean(loc$lat), zoom = 8) %>% 
 addProviderTiles(providers$OpenStreetMap, options = leafletOptions(minZoom = 6,maxZoom = 9)) 
-
-=======
-library(magrittr)
-library(htmlwidgets)
-library(readr)
-
-loc <- read_csv("loc.csv")
-
-leaflet() %>%
-addProviderTiles(providers$OpenStreetMap) %>% 
-addMarkers(data = loc, lng = loc$lng, lat = loc$lat, popup= loc$name)
- 
->>>>>>> 8ca590296d3e9bf8e14ffaa47b83fa45472f258c
 
 ```
 
