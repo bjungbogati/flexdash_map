@@ -35,6 +35,4 @@ Column {data-width=250}
     
 ```{r}
 knitr::kable(loc[1:2])
-
-sessionInfo()
 ``` 
