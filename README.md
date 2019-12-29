@@ -10,4 +10,10 @@ Flexdashboard which auto-updates the map when your add your location (lon, lat).
 
 Note: Try google map for longitude, latitude.
 
+## Is it any faster ?
+
+After caching, build time has reduced to about 1 minutes.
+
+![](https://prnt.sc/qh6cc7)
+
 
