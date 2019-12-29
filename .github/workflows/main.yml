@@ -1,7 +1,5 @@
 on:
   pull_request:
-    branches:
-       - master
     paths:
        - '**.csv'
 
@@ -12,6 +10,9 @@ jobs:
     runs-on: ubuntu-16.04
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+          silentFailure: true
       - uses: r-lib/actions/setup-r@master
       - uses: r-lib/actions/setup-pandoc@master
       
