@@ -23,8 +23,7 @@ jobs:
 
       - name: Install R Packages
         run: |
-          Rscript -e 'pkgs = c("readr", "leaflet", "flexdashboard", "rmarkdown")
-if(length(new.pkgs <- setdiff(pkgs, rownames(installed.packages())))) install.packages(new.pkgs)'
+          Rscript -e 'pkgs = c("readr", "leaflet", "flexdashboard", "rmarkdown") if(length(new.pkgs <- setdiff(pkgs, rownames(installed.packages())))) install.packages(new.pkgs)'
       
       - name: Render Rmarkdown
         run: |
