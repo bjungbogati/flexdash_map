@@ -9,7 +9,7 @@ We have used the [GitHub Action](https://github.com/features/actions) which auto
 Features:
 - Trigger event on push (you can also schedule every day).
 - Free for public / private repository
-- CI/CD (Continuous: Integration / Delivery)
+- CI/CD for Package development (Continuous: Integration / Delivery)
 
 ### Want to try?
 
