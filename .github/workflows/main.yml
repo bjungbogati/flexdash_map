@@ -37,4 +37,4 @@ if(length(new.pkgs <- setdiff(pkgs, rownames(installed.packages())))) install.pa
           git config user.name "{{ github.actor }}"
           git add .
           git commit -m 'Re-build README.Rmd' || echo "No changes to commit"
-          git push -f https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git HEAD:${headBranch} || echo "No changes to commit"
+          git push -f https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git HEAD || echo "No changes to commit"
