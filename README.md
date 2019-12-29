@@ -6,7 +6,7 @@ Flexdashboard which auto-updates the map when your add your location (lon, lat).
 
 We have used the [GitHub Action](https://github.com/features/actions) which automates our workflow.
 
-Features:
+Things to know:
 - Trigger event on push (you can also schedule every day).
 - Free for public / private repository
 - CI/CD for Package development (Continuous: Integration / Delivery)
