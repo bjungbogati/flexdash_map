@@ -2,6 +2,10 @@
 
 Flexdashboard which auto-updates the map when your add your location (lon, lat).
 
+## Uses
+
+We have used the [GitHub Action](https://github.com/features/actions) which automates our workflow.
+
 ### Want to try?, 
 
 1. Edit the **loc.csv** file with your name, address, longitude, latitude 
