@@ -2,6 +2,9 @@
 
 Flexdashboard which auto-updates the map when your add your location (lon, lat).
 
+![](https://image.prntscr.com/image/WbKQvY4cS5CWB8LZeJkeJA.png)
+
+
 ## Uses
 
 We have used the [GitHub Action](https://github.com/features/actions) which automates our workflow.
