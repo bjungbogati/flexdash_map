@@ -13,7 +13,7 @@ Things to know:
 
 ### Want to try?
 
-1. Edit the **loc.csv** file with your name, address, longitude, latitude 
+1. Edit the [loc.csv](https://github.com/bjungbogati/flexdash_map/blob/master/loc.csv) file with your name, address, longitude, latitude 
 2. Commit with new branch 
 3. Send the pull request
 
