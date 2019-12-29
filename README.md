@@ -14,6 +14,6 @@ Note: Try google map for longitude, latitude.
 
 After caching, build time has reduced to about 1 minutes.
 
-![](https://prnt.sc/qh6cc7)
+![](https://image.prntscr.com/image/rDM7t2-VQyqWJzPY4va_zQ.png)
 
 
