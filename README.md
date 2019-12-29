@@ -11,7 +11,7 @@ Features:
 - Free for public / private repository
 - CI/CD (Continuous: Integration / Delivery)
 
-### Want to try?, 
+### Want to try?
 
 1. Edit the **loc.csv** file with your name, address, longitude, latitude 
 2. Commit with new branch 
