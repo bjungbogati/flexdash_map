@@ -23,7 +23,6 @@ loc <- read_csv("loc.csv")
 
 leaflet(loc) %>%
 addMarkers(lng = loc$lng, lat = loc$lat, popup= loc$name) %>% 
-setView(lng =  mean(loc$lng),lat = mean(loc$lat)) %>% 
 addProviderTiles(providers$OpenStreetMap) 
 
 ```
